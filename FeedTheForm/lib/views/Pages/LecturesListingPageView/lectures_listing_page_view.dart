@@ -57,20 +57,17 @@ class LecturesListingPageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: darkGray1,
-      body: Container(
-        margin: EdgeInsets.symmetric(horizontal: 20.0),
-        child: ListView.builder(
-          itemCount: lecturesByDay.length,
-          itemBuilder: (context, index) {
-            return LecturesInTheSameDayListing(
-              context,
-              lecturesByDay[index]["yearMonthDay"],
-              lecturesByDay[index]["lectures"],
-            );
-          },
-        ),
+    return Container(
+      margin: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 0),
+      child: ListView.builder(
+        itemCount: lecturesByDay.length,
+        itemBuilder: (context, index) {
+          return LecturesInTheSameDayListing(
+            context,
+            lecturesByDay[index]["yearMonthDay"],
+            lecturesByDay[index]["lectures"],
+          );
+        },
       ),
     );
   }

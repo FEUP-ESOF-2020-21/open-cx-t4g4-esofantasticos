@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:FeedTheForm/utils/colors.dart';
-import 'package:FeedTheForm/views/Pages/LecturesListingPageView/lectures_listing_page_view.dart';
+import 'package:FeedTheForm/views/app_wrapper.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'FeedTheForm',
       theme: getTheme(context),
-      home: LecturesListingPageView(),
+      home: AppWrapper(),
     );
   }
 }
