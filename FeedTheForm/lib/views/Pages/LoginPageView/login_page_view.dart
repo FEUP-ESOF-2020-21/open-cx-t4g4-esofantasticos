@@ -53,6 +53,9 @@ class LoginPageView extends StatelessWidget {
                     children: <Widget>[
                       Expanded(
                         child: TextFormField(
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
                           decoration: InputDecoration(
                             labelText: 'Password',
                             labelStyle: TextStyle(
