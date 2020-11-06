@@ -31,7 +31,7 @@ Thank you!
 ---
 
 ## Product Vision
-Making host-atendee interaction simple. Users post relevant questions and the audience can vote and reply. The talk's host may answer the most popular ones. 
+An app that will allow attendees to rate lectures, while motivating them to do so by placing the most active raters in a competition to win prizes. The given feedback will be used to attribute ratings to the lectures.
 
 ---
 ## Elevator Pitch
