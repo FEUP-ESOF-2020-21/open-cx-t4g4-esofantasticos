@@ -51,7 +51,7 @@ Start by contextualizing your module, describing the main concepts, terms, roles
 
 ### Use case diagram
 
-![Use case diagram](../images/Use_cases_diagram.png)
+![Use case diagram](images/Use_cases_diagram.png)
 
 ### User stories
 
@@ -61,7 +61,7 @@ As a user, I want to be able to attribute a rating to a talk and to the speaker 
 
 ##### User interface mockup
 
-<img src="../images/Mockups/Rating_Pop_Up.png" width="300"/>
+<img src="images/Mockups/Rating_Pop_Up.png" width="300"/>
 
 ##### Acceptance tests
 ```gherkin
@@ -83,7 +83,7 @@ As a user, I want to be able to check all the information about each lecture, so
 
 ##### User interface mockup
 
-<img src="../images/Mockups/Lectures_Listing.png" width="300"/>  <img src="../images/Mockups/Lecture_Page.png" width="300"/>
+<img src="images/Mockups/Lectures_Listing.png" width="300"/>  <img src="images/Mockups/Lecture_Page.png" width="300"/>
 
 ##### Acceptance tests
 ```gherkin
@@ -104,7 +104,7 @@ As an admin, I want to be able to check the rating of each lecture and each spea
 
 ##### User interface mockup
 
-<img src="../images/Mockups/Lectures_Listing_(admin).png" width="300"/>  <img src="../images/Mockups/Lecture_Page_(admin).png" width="300"/>
+<img src="images/Mockups/Lectures_Listing_(admin).png" width="300"/>  <img src="images/Mockups/Lecture_Page_(admin).png" width="300"/>
 
 ##### Acceptance tests
 ```gherkin
@@ -125,7 +125,7 @@ As a user, I want to be notified if I’ve won a prize so that I can go collect 
 
 ##### User interface mockup
 
-<img src="../images/Mockups/Prize_Page.png" width="300"/>
+<img src="images/Mockups/Prize_Page.png" width="300"/>
 
 ##### Acceptance tests
 ```gherkin
@@ -147,7 +147,7 @@ As an admin, I want the app to guarantee that each rating was given by a user th
 
 ##### User interface mockup
 
-<img src="../images/Mockups/Rating_Pop_Up.png" width="300"/>
+<img src="images/Mockups/Rating_Pop_Up.png" width="300"/>
 
 ##### Acceptance tests
 ```gherkin
@@ -169,7 +169,7 @@ As a user, I want to be able to check my account settings so that I can update o
 
 ##### User interface mockup
 
-<img src="../images/Mockups/Account.png" width="300"/>
+<img src="images/Mockups/Account.png" width="300"/>
 
 ##### Acceptance tests
 ```gherkin
@@ -200,10 +200,10 @@ To document the architecture requires describing the decomposition of the system
 In this section you should start by briefly describing the overall components of the project and their interrelations. You should also describe how you solved typical problems you may have encountered, pointing to well-known architectural and design patterns, if applicable.
 
 ### Logical architecture
-<img src="../images/logic_architecture.JPG" width="500"/>
+<img src="images/logic_architecture.JPG" width="500"/>
 
 ### Physical architecture
-<img src="../images/physical_architecture.JPG" width="500"/>
+<img src="images/physical_architecture.JPG" width="500"/>
 
 ### Prototype
 To help on validating all the architectural, design and technological decisions made, we usually implement a vertical prototype, a thin vertical slice of the system.
