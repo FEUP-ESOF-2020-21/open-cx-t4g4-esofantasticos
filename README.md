@@ -35,7 +35,8 @@ An app that will allow attendees to rate lectures, while motivating them to do s
 
 ---
 ## Elevator Pitch
-Our goal is to have an application that helps organizations of conferences get feedback on lectures. Each person who attended the lecture is allowed to rate it and for every rating given, they eligble contenders to win a prize in draw among raters.
+Most lectures in conferences greatly appreciate feedback to improve themselves and to let conference organizers evaluate better which lectures work best, but when lectures finish, attendees usually don't bother leaving ratings and just go on with their lives.
+We created **FeedTheForm** to solve this problem, by not only giving the necessary platform to allow those ratings to be given organically, but also to motivate attendees to rate the lectures they attend by organizing draws with prizes to be won.
 
 ---
 ## Requirements
