@@ -5,6 +5,7 @@ import 'package:FeedTheForm/widgets/profile_picture_and_name_row.dart';
 import 'package:FeedTheForm/Lecture.dart';
 import 'package:FeedTheForm/utils/get_weekday_name.dart';
 import 'package:FeedTheForm/utils/get_month_name.dart';
+import 'package:FeedTheForm/views/Pages/LecturePageView/lecture_page_view.dart';
 
 class LecturesListingPageView extends StatelessWidget {
   static final Lecturer julieChoi = Lecturer(
@@ -133,7 +134,13 @@ class LectureCard extends StatelessWidget {
       margin: EdgeInsets.symmetric(vertical: 10.0),
       color: darkGray2,
       child: InkWell(
-        onTap: () => {} /* Navigator.pushNamed(context, '/subject') */,
+        onTap: () => {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => LecturePageView()),
+          )
+        },
+        /* Navigator.pushNamed(context, '/subject') */
         // raio de 4.0 porque é o default radius do Card
         borderRadius: BorderRadius.circular(4.0),
         child: Container(

@@ -3,7 +3,7 @@ import 'package:FeedTheForm/widgets/icon_and_info_row.dart';
 import 'package:FeedTheForm/widgets/profile_picture_and_name_row.dart';
 import 'package:FeedTheForm/Lecture.dart';
 
-class LecturesPageView extends StatelessWidget {
+class LecturePageView extends StatelessWidget {
   static final Lecturer julieChoi = Lecturer(
     "Julie Choi",
     "assets/lecturers/julie_choi.jpg",
