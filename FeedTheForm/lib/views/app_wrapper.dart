@@ -38,8 +38,8 @@ class _AppWrapperState extends State<AppWrapper> {
     return Scaffold(
       backgroundColor: darkGray1,
       appBar: FeedTheFormAppBar(),
-      bottomNavigationBar: BottomNavBar(2, updateCurrentIndex),
-      body: tabs[2],
+      bottomNavigationBar: BottomNavBar(_currentIndex, updateCurrentIndex),
+      body: tabs[_currentIndex],
     );
   }
 }
