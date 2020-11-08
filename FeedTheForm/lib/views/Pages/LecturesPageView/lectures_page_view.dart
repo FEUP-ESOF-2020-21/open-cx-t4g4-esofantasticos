@@ -4,23 +4,6 @@ import 'package:FeedTheForm/widgets/profile_picture_and_name_row.dart';
 import 'package:FeedTheForm/Lecture.dart';
 
 class LecturesPageView extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black54,
-      body: Center(
-        child: LecturePage(
-          context,
-        ),
-      ),
-    );
-  }
-}
-
-class LecturePage extends StatelessWidget {
-  BuildContext context;
-  // String lectureInfo;
-
   static final Lecturer julieChoi = Lecturer(
     "Julie Choi",
     "assets/lecturers/julie_choi.jpg",
@@ -38,13 +21,23 @@ class LecturePage extends StatelessWidget {
     "firstLecture": firstLecture,
   };
 
-  LecturePage(
-    final BuildContext context,
-    // final String lecturesInfo,
-  ) {
-    this.context = context;
-    // this.lectureInfo = lectureInfo;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black54,
+      body: Center(
+        child: LecturePage(
+          lecturesByDay["firstLecture"],
+        ),
+      ),
+    );
   }
+}
+
+class LecturePage extends StatelessWidget {
+  LecturePage(this.lectureInfo);
+
+  final LectureInfo lectureInfo;
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +52,7 @@ class LecturePage extends StatelessWidget {
               Column(
                 children: [
                   Text(
-                    lecturesByDay["firstLecture"].lectureName,
+                    lectureInfo.lectureName,
                     textAlign: TextAlign.left,
                     style: TextStyle(
                       color: Colors.white,
@@ -73,8 +66,8 @@ class LecturePage extends StatelessWidget {
               Row(
                 children: [
                   ProfilePictureAndNameRow(
-                    lecturesByDay["firstLecture"].lecturer.photo,
-                    lecturesByDay["firstLecture"].lecturer.name,
+                    lectureInfo.lecturer.photo,
+                    lectureInfo.lecturer.name,
                     15.0,
                     16.0,
                   )
@@ -85,7 +78,7 @@ class LecturePage extends StatelessWidget {
                 children: [
                   IconAndInfoRow(
                     "assets/icons/blue_calendar.png",
-                    lecturesByDay["firstLecture"].date.yearMonthDay,
+                    lectureInfo.date.yearMonthDay,
                   ),
                 ],
               ),
@@ -94,9 +87,9 @@ class LecturePage extends StatelessWidget {
                 children: [
                   IconAndInfoRow(
                     "assets/icons/blue_clock.png",
-                    lecturesByDay["firstLecture"].date.startHour +
+                    lectureInfo.date.startHour +
                         " - " +
-                        lecturesByDay["firstLecture"].date.endHour,
+                        lectureInfo.date.endHour,
                   ),
                 ],
               ),
@@ -105,7 +98,7 @@ class LecturePage extends StatelessWidget {
                 children: [
                   IconAndInfoRow(
                     "assets/icons/blue_maps-and-flags.png",
-                    lecturesByDay["firstLecture"].location,
+                    lectureInfo.location,
                   ),
                 ],
               ),
@@ -137,7 +130,7 @@ class LecturePage extends StatelessWidget {
                         top: 5,
                       ),
                       child: Text(
-                        lecturesByDay["firstLecture"].description,
+                        lectureInfo.description,
                         textAlign: TextAlign.left,
                         style: TextStyle(
                           color: Colors.white,
