@@ -32,12 +32,12 @@ class LoginPageView extends StatelessWidget {
                         decoration: InputDecoration(
                           labelText: 'Email',
                           labelStyle: TextStyle(
-                            color: Colors.white12,
+                            color: Colors.white38,
                           ),
                           contentPadding: EdgeInsets.symmetric(vertical: 0.0),
                           enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
-                              color: Colors.white12,
+                              color: Colors.white38,
                               width: 1.0,
                             ),
                           ),
@@ -57,12 +57,12 @@ class LoginPageView extends StatelessWidget {
                         decoration: InputDecoration(
                           labelText: 'Password',
                           labelStyle: TextStyle(
-                            color: Colors.white12,
+                            color: Colors.white38,
                           ),
                           contentPadding: EdgeInsets.symmetric(vertical: 0.0),
                           enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
-                              color: Colors.white12,
+                              color: Colors.white38,
                               width: 1.0,
                             ),
                           ),
