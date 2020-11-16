@@ -5,6 +5,7 @@ import 'package:FeedTheForm/widgets/profile_picture_and_name_row.dart';
 import 'package:FeedTheForm/Lecture.dart';
 import 'package:FeedTheForm/utils/get_weekday_name.dart';
 import 'package:FeedTheForm/utils/get_month_name.dart';
+import 'package:FeedTheForm/views/Pages/LecturePageView/lecture_page_view.dart';
 
 class LecturesListingPageView extends StatelessWidget {
   static final Lecturer julieChoi = Lecturer(
@@ -25,7 +26,7 @@ class LecturesListingPageView extends StatelessWidget {
     julieChoi,
     Date("2020-10-02", "09:30", "10:30"),
     "B223",
-    null,
+    "The 2019 MIT AI Conference, the 3rd edition of this annual conference, focused on the Future of Computing - the rise of Artificial Intelligence and how innovators are leveraging AI to drive new use cases and chieve better outcomes across industries.",
   );
 
   static final LectureInfo secondLecture = LectureInfo(
@@ -133,7 +134,14 @@ class LectureCard extends StatelessWidget {
       margin: EdgeInsets.symmetric(vertical: 10.0),
       color: darkGray2,
       child: InkWell(
-        onTap: () => {} /* Navigator.pushNamed(context, '/subject') */,
+        onTap: () => {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => LecturePageView(lectureInfo)),
+          )
+        },
+        /* Navigator.pushNamed(context, '/subject') */
         // raio de 4.0 porque é o default radius do Card
         borderRadius: BorderRadius.circular(4.0),
         child: Container(

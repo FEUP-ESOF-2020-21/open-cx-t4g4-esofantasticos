@@ -10,17 +10,23 @@ class FeedTheFormAppBar extends StatefulWidget with PreferredSizeWidget {
 }
 
 class _FeedTheFormAppBarState extends State<FeedTheFormAppBar> {
-
   Widget customAppBarTitle = Container(
-        alignment: Alignment.center,
-        height: 50,
-        child: Image.asset("assets/logo/logo.png"),
+    alignment: Alignment.center,
+    height: 50,
+    child: Image.asset("assets/logo/logo.png"),
   );
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: customAppBarTitle,
+      centerTitle: true,
+      title: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          customAppBarTitle,
+        ],
+      ),
       elevation: 0.0,
       backgroundColor: darkGray1,
       bottom: PreferredSize(
