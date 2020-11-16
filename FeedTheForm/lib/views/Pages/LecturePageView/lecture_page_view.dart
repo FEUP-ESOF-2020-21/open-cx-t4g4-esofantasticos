@@ -1,47 +1,18 @@
+import 'package:FeedTheForm/widgets/feed_the_form_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:FeedTheForm/widgets/icon_and_info_row.dart';
 import 'package:FeedTheForm/widgets/profile_picture_and_name_row.dart';
 import 'package:FeedTheForm/Lecture.dart';
 
 class LecturePageView extends StatelessWidget {
-  static final Lecturer julieChoi = Lecturer(
-    "Julie Choi",
-    "assets/lecturers/julie_choi.jpg",
-  );
-
-  static final LectureInfo firstLecture = LectureInfo(
-    "Applying AI to Real World Use Cases",
-    julieChoi,
-    Date("2020-10-02", "09:30", "10:30"),
-    "B223",
-    "The 2019 MIT AI Conference, the 3rd edition of this annual conference, focused on the Future of Computing - the rise of Artificial Intelligence and how innovators are leveraging AI to drive new use cases and chieve better outcomes across industries.",
-  );
-
-  final Map<String, LectureInfo> lecturesByDay = {
-    "firstLecture": firstLecture,
-  };
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black54,
-      body: Center(
-        child: LecturePage(
-          lecturesByDay["firstLecture"],
-        ),
-      ),
-    );
-  }
-}
-
-class LecturePage extends StatelessWidget {
-  LecturePage(this.lectureInfo);
+  LecturePageView(this.lectureInfo);
 
   final LectureInfo lectureInfo;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: FeedTheFormAppBar(),
       backgroundColor: Colors.black54,
       body: SingleChildScrollView(
         child: Container(
@@ -52,7 +23,9 @@ class LecturePage extends StatelessWidget {
               Column(
                 children: [
                   Text(
-                    lectureInfo.lectureName,
+                    lectureInfo.lectureName == null
+                        ? ''
+                        : lectureInfo.lectureName,
                     textAlign: TextAlign.left,
                     style: TextStyle(
                       color: Colors.white,
@@ -130,7 +103,9 @@ class LecturePage extends StatelessWidget {
                         top: 5,
                       ),
                       child: Text(
-                        lectureInfo.description,
+                        lectureInfo.description == null
+                            ? ''
+                            : lectureInfo.description,
                         textAlign: TextAlign.left,
                         style: TextStyle(
                           color: Colors.white,

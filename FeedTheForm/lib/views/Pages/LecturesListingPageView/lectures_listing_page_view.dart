@@ -26,7 +26,7 @@ class LecturesListingPageView extends StatelessWidget {
     julieChoi,
     Date("2020-10-02", "09:30", "10:30"),
     "B223",
-    null,
+    "The 2019 MIT AI Conference, the 3rd edition of this annual conference, focused on the Future of Computing - the rise of Artificial Intelligence and how innovators are leveraging AI to drive new use cases and chieve better outcomes across industries.",
   );
 
   static final LectureInfo secondLecture = LectureInfo(
@@ -137,7 +137,8 @@ class LectureCard extends StatelessWidget {
         onTap: () => {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => LecturePageView()),
+            MaterialPageRoute(
+                builder: (context) => LecturePageView(lectureInfo)),
           )
         },
         /* Navigator.pushNamed(context, '/subject') */
