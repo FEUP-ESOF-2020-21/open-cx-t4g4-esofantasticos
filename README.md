@@ -198,8 +198,18 @@ In this section you should start by briefly describing the overall components of
 ### Logical architecture
 <img src="images/logic_architecture.JPG" width="500"/>
 
+
+Our logical architecture is based on MVC(Model View Controller), as we think it's the most appropried structure to our project.
+
+The Model contains the information about each domain, such as account information or lectures. Every update is done by
+Controller (changing password in my account, changing lectures description, etc), and then the View is in charge of displaying that information.
+
 ### Physical architecture
 <img src="images/physical_architecture.JPG" width="500"/>
+
+Our physical architecture is simple, as the user installs the app on their phone, and when there´s a nedd to connect with our database (login, register, etc) it communicates with it via HTTPS requests, where it will store and retrieve all the information needed.
+
+Our database server consists in Firebase.
 
 ### Prototype
 To help on validating all the architectural, design and technological decisions made, we usually implement a vertical prototype, a thin vertical slice of the system.

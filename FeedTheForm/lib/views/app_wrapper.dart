@@ -1,4 +1,6 @@
+import 'package:FeedTheForm/views/Pages/LecturePageView/lecture_page_view.dart';
 import 'package:FeedTheForm/views/Pages/LecturesListingPageView/lectures_listing_page_view.dart';
+import 'package:FeedTheForm/views/Pages/LoginPageView/login_page_view.dart';
 import 'package:FeedTheForm/views/Pages/ProfilePageView/profile_page_view.dart';
 import 'package:flutter/material.dart';
 import 'package:FeedTheForm/widgets/feed_the_form_appbar.dart';
@@ -23,6 +25,7 @@ class _AppWrapperState extends State<AppWrapper> {
       ),
     ),
     ProfilePageView(),
+    LoginPageView(),
   ];
 
   int _currentIndex = 0;
@@ -39,7 +42,7 @@ class _AppWrapperState extends State<AppWrapper> {
       backgroundColor: darkGray1,
       appBar: FeedTheFormAppBar(),
       bottomNavigationBar: BottomNavBar(_currentIndex, updateCurrentIndex),
-      body: tabs[_currentIndex],
+      body: tabs[3],
     );
   }
 }
