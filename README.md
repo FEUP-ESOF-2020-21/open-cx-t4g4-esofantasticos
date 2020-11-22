@@ -52,7 +52,94 @@ Start by contextualizing your module, describing the main concepts, terms, roles
 ### Use case diagram
 
 ![Use case diagram](images/Use_cases_diagram.png)
+#### See Lecture schedule and Information:
 
+*  **Actor**. User.
+
+*  **Description**. This use case exists so that the User can have access to Lectures schedule and information.
+
+*  **Preconditions and Postconditions**.  In order to see this information, the User must first register and Log-in.
+  
+*  **Normal Flow**. 
+	1. The attendee presses the button to go to the Lectures page.
+	2. The attendee choses one of the Lectures and sees more information regarding that lecture.
+	
+#### See prize related informations:
+
+*  **Actor**. User.
+
+*  **Description**. This use case exists so that the User can have access to prize related information.
+
+*  **Preconditions and Postconditions**.  In order to see this information, the User must first register and Log-in.
+  
+*  **Normal Flow**. 
+	1. The attendee presses the button to go to the prizes page.
+	2. The attendee choses one of the prizes and sees more information regarding that prize.
+
+#### Register:
+
+*  **Actor**. User.
+
+*  **Description**. This use case exists so that the User can register and have an account in the app.  
+
+*  **Preconditions and Postconditions**.  In order to register as an Administrator, the user must have an administrator key.
+  
+*  **Normal Flow**. 
+	.
+
+#### Rate Lectures:
+
+*  **Actor**. Attendee.
+
+*  **Description**. This use case exists so that Attendees can rate lectures and help improve the quality of the event.
+
+*  **Preconditions and Postconditions**.  In order to rate a lecture, the attende must first insert the code given in the lecture for this effect.
+  
+*  **Normal Flow**. 
+	1. The attendee presses the button to rate the lecture.
+	2. The attendee types the code given in the lecture.
+	3. The attendee rates the lecture from 1-5 stars.
+
+*  **Alternative Flows and Exceptions**. 
+	1. The attendee presses the button to rate the lecture.
+	2. The attendee types the wrong code.
+	3. The attendee can not rate the lecture and is asked to input the code given in the lecture.
+	
+#### See the rating of each lectures:
+
+*  **Actor**. Administrator.
+
+*  **Description**. This use case exists so that Administrators can see the average rating given to each lecture and improve the quality of the event based on the feedback given by the attendees.
+
+*  **Preconditions and Postconditions**.  In order to see the average rating given to each lecture the user must be logged in as an Administrator.
+  
+*  **Normal Flow**. 
+	1. The Administrator presses the button to go to the Lectures page.
+	2. The Administrator choses one of the Lectures and sees the average rating given to that lecture as well as other information regarding the lecture.
+
+#### Update account information:
+
+*  **Actor**. User.
+
+*  **Description**. This use case exists so that Users can update their account information, such as password and profile photo.
+
+*  **Preconditions and Postconditions**.  In order to update information the User has to be logged in.
+  
+*  **Normal Flow**. 
+	1. The User presses the button to go to the Account page.
+	2. The User types the current password as well as the new one he wants to update to.
+	3. The User presses the update Password button and if the Password is correct and the New Password is equal to the confirmation the Password is updated.
+
+*  **Alternative Flows and Exceptions**. 
+	1. The User presses the button to go to the Account page.
+	2. The User types the current password as well as the new one he wants to update to.
+	3. The User presses the update Password button and if the Password is not the correct or the New Password is not equal to the confirmation the Password is not updated.
+	4. The User can then re-type the information and proceed as normal 
+*  **OR** 
+	1. The User presses the button to go to the Account page.
+	2. The User choses a new profile picture.
+	3. The profile picture is updated.
+  
 ### User stories
 
 #### Story #1
