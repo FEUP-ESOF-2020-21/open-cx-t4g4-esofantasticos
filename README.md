@@ -76,17 +76,6 @@ Start by contextualizing your module, describing the main concepts, terms, roles
 	1. The User presses the button to go to the prizes page.
 	2. The User choses one of the prizes and sees more information regarding that prize.
 
-#### Register:
-
-*  **Actor**. User.
-
-*  **Description**. This use case exists so that the User can register and have an account in the app.  
-
-*  **Preconditions and Postconditions**.  In order to register as an Administrator, the user must have an administrator key.
-  
-*  **Normal Flow**. 
-	.
-
 #### Rate Lectures:
 
 *  **Actor**. Attendee.
