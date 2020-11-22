@@ -73,8 +73,8 @@ Start by contextualizing your module, describing the main concepts, terms, roles
 *  **Preconditions and Postconditions**.  In order to see this information, the User must first register and Log-in.
   
 *  **Normal Flow**. 
-	1. The attendee presses the button to go to the prizes page.
-	2. The attendee choses one of the prizes and sees more information regarding that prize.
+	1. The User presses the button to go to the prizes page.
+	2. The User choses one of the prizes and sees more information regarding that prize.
 
 #### Register:
 
