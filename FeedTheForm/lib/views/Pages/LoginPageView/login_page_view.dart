@@ -1,11 +1,34 @@
 import 'dart:ui';
 
+import 'package:FeedTheForm/views/app_wrapper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
-class LoginPageView extends StatelessWidget {
+TextEditingController emailController = new TextEditingController();
+TextEditingController passwordController = new TextEditingController();
+
+String loginEmail = "teste";
+String loginPass = "teste";
+String adminLoginEmail = "admin";
+String adminLoginPass = "admin";
+
+const invalid = TextStyle(
+  color: Colors.red,
+);
+
+const valid = TextStyle(
+  color: Colors.transparent,
+);
+
+class LoginPageView extends StatefulWidget {
   @override
+  _LoginPageViewState createState() => _LoginPageViewState();
+}
+
+class _LoginPageViewState extends State<LoginPageView> {
+  bool invalidCredentials = false;
+
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.black54,
@@ -24,8 +47,21 @@ class LoginPageView extends StatelessWidget {
                 SizedBox(height: 75),
                 Row(
                   children: <Widget>[
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        "* Invalid credentials!",
+                        style: invalidCredentials ? invalid : valid,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 15),
+                Row(
+                  children: <Widget>[
                     Expanded(
                       child: TextFormField(
+                        controller: emailController,
                         style: TextStyle(
                           color: Colors.white,
                         ),
@@ -51,6 +87,10 @@ class LoginPageView extends StatelessWidget {
                   children: <Widget>[
                     Expanded(
                       child: TextFormField(
+                        controller: passwordController,
+                        obscureText: true,
+                        enableSuggestions: false,
+                        autocorrect: false,
                         style: TextStyle(
                           color: Colors.white,
                         ),
@@ -101,7 +141,21 @@ class LoginPageView extends StatelessWidget {
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(5.0),
                                 ),
-                                onPressed: () {},
+                                onPressed: () {
+                                  setState(() {
+                                    if(checkLogin(emailController.text, passwordController.text)) {
+                                      invalidCredentials = false;
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(builder: (context) => AppWrapper()),
+                                      );
+                                    } else {
+                                      invalidCredentials = true;
+                                      emailController.text = "";
+                                      passwordController.text = "";
+                                    }
+                                  });
+                                },
                                 color: Colors.blue[600],
                                 textColor: Colors.white,
                                 child: Padding(
@@ -143,5 +197,18 @@ class LoginPageView extends StatelessWidget {
             ),
           ),
         ));
+  }
+}
+
+bool checkLogin(String email, String pass) {
+  if (email.compareTo(loginEmail) == 0 && pass.compareTo(loginPass) == 0) {
+    // REGULAR LOGIN
+    return true;
+  } else if(email.compareTo(adminLoginEmail) == 0 && pass.compareTo(adminLoginPass) == 0) {
+    // ADMIN LOGIN
+    return true;
+  } else {
+    // FAILED LOGIN
+    return false;
   }
 }

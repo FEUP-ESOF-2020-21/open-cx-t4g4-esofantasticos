@@ -25,7 +25,6 @@ class _AppWrapperState extends State<AppWrapper> {
       ),
     ),
     ProfilePageView(),
-    LoginPageView(),
   ];
 
   int _currentIndex = 0;
@@ -42,7 +41,7 @@ class _AppWrapperState extends State<AppWrapper> {
       backgroundColor: darkGray1,
       appBar: FeedTheFormAppBar(),
       bottomNavigationBar: BottomNavBar(_currentIndex, updateCurrentIndex),
-      body: tabs[3],
+      body: tabs[_currentIndex],
     );
   }
 }
