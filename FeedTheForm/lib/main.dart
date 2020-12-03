@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'FeedTheForm',
       theme: getTheme(context),
-      home: LoginPageView(),
+      home: AppWrapper(),
     );
   }
 }

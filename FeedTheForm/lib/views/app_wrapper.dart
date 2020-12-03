@@ -1,6 +1,7 @@
 import 'package:FeedTheForm/views/Pages/LecturePageView/lecture_page_view.dart';
 import 'package:FeedTheForm/views/Pages/LecturesListingPageView/lectures_listing_page_view.dart';
 import 'package:FeedTheForm/views/Pages/LoginPageView/login_page_view.dart';
+import 'package:FeedTheForm/views/Pages/PrizesPageView/prize_page_view.dart';
 import 'package:FeedTheForm/views/Pages/ProfilePageView/profile_page_view.dart';
 import 'package:flutter/material.dart';
 import 'package:FeedTheForm/widgets/feed_the_form_appbar.dart';
@@ -15,15 +16,7 @@ class AppWrapper extends StatefulWidget {
 class _AppWrapperState extends State<AppWrapper> {
   final List<Widget> tabs = [
     LecturesListingPageView(),
-    Center(
-      child: Text(
-        "Prizes",
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 20.0,
-        ),
-      ),
-    ),
+    PrizePageView(),
     ProfilePageView(),
   ];
 
