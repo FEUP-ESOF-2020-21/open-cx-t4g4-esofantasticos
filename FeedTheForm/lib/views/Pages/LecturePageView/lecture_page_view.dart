@@ -1,4 +1,5 @@
 import 'package:FeedTheForm/Lecture.dart';
+import 'package:FeedTheForm/controllers/MyController.dart';
 import 'package:FeedTheForm/widgets/feed_the_form_appbar.dart';
 import 'package:FeedTheForm/widgets/icon_and_info_row.dart';
 import 'package:FeedTheForm/widgets/profile_picture_and_name_row.dart';
