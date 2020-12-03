@@ -4,6 +4,7 @@ class LectureInfo {
   Date date;
   String location;
   String description;
+  double ratingAverage;
 
   LectureInfo(
     String lectureName,
