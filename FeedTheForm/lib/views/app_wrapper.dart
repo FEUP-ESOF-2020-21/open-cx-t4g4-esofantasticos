@@ -1,3 +1,4 @@
+import 'package:FeedTheForm/controllers/MyController.dart';
 import 'package:FeedTheForm/views/Pages/LecturePageView/lecture_page_view.dart';
 import 'package:FeedTheForm/views/Pages/LecturesListingPageView/lectures_listing_page_view.dart';
 import 'package:FeedTheForm/views/Pages/LoginPageView/login_page_view.dart';
@@ -9,15 +10,17 @@ import 'package:FeedTheForm/widgets/bottom_nav_bar.dart';
 import 'package:FeedTheForm/utils/colors.dart';
 
 class AppWrapper extends StatefulWidget {
+  AppWrapper(MyController dbController);
+
   @override
   _AppWrapperState createState() => _AppWrapperState();
 }
 
 class _AppWrapperState extends State<AppWrapper> {
   final List<Widget> tabs = [
-    LecturesListingPageView(),
-    PrizePageView(),
-    ProfilePageView(),
+    LecturesListingPageView(dbController),
+    PrizePageView(dbController),
+    ProfilePageView(dbController),
   ];
 
   int _currentIndex = 0;

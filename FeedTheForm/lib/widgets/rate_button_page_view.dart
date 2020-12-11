@@ -1,18 +1,21 @@
 import 'package:FeedTheForm/Lecture.dart';
 import 'package:FeedTheForm/controllers/DatabaseController.dart';
+import 'package:FeedTheForm/controllers/MyController.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 // ignore: non_constant_identifier_names
-Widget ShowRating(LectureInfo lectureInfo, DatabaseController dbcontroller) {
+Widget ShowRating(LectureInfo lectureInfo, MyController dbcontroller) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
       if (dbcontroller.isAdmin()) RatingInformation(lectureInfo: lectureInfo),
-      RateButtonPageView(lectureInfo, dbcontroller),
+      if (!dbcontroller.isAdmin()) RateButtonPageView(lectureInfo, dbcontroller),
     ],
   );
 }
+
+TextEditingController lectureCodeController = new TextEditingController();
 
 class RatingInformation extends StatelessWidget {
   final LectureInfo lectureInfo;
@@ -38,7 +41,7 @@ class RatingInformation extends StatelessWidget {
                   style: TextStyle(fontSize: 20.0, color: Color(0xff6B6B6B)),
                 ),
                 Text(
-                  lectureInfo.ratingAverage.toString(),
+                  lectureInfo.getRatingAverage().toString() + " ",
                   style: TextStyle(fontSize: 20.0),
                 ),
                 Image.asset(
@@ -56,18 +59,18 @@ class RatingInformation extends StatelessWidget {
 }
 
 class RateButtonPageView extends StatefulWidget {
-  final DatabaseController dbcontroller;
   final LectureInfo lectureInfo;
+  final MyController dbController;
 
-  const RateButtonPageView(this.lectureInfo, this.dbcontroller) : super();
+  const RateButtonPageView(this.lectureInfo, this.dbController) : super();
 
   @override
   _RateButtonPageViewState createState() =>
-      _RateButtonPageViewState(lectureInfo, dbcontroller);
+      _RateButtonPageViewState(lectureInfo, dbController);
 }
 
 class _RateButtonPageViewState extends State<RateButtonPageView> {
-  final DatabaseController dbcontroller;
+  final MyController dbcontroller;
   final LectureInfo lectureInfo;
 
   double rating;
@@ -117,6 +120,7 @@ class _RateButtonPageViewState extends State<RateButtonPageView> {
 
   TextFormField buildLectureCodeField() {
     return TextFormField(
+      controller: lectureCodeController,
       style: TextStyle(
         color: Colors.white,
       ),
@@ -175,7 +179,12 @@ class _RateButtonPageViewState extends State<RateButtonPageView> {
     return TextButton(
       child: Text('Rate'),
       onPressed: () {
-        dbcontroller.addRating(lectureInfo, rating);
+        int lectureCode = int.tryParse(lectureCodeController.text);
+        if(!lectureCode.isNaN) {
+          if(lectureCode == lectureInfo.lectureCode) {
+            lectureInfo.addRating(dbcontroller.getCurrentUser(), this.rating);
+          }
+        }
         Navigator.of(context).pop();
       },
     );

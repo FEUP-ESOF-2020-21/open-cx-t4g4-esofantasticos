@@ -1,19 +1,22 @@
-import 'package:FeedTheForm/Lecture.dart';
 import 'DatabaseController.dart';
 
 class MyController implements DatabaseController {
+  String currentUser;
+
+  MyController(
+      String currentUser,
+      ) {
+    this.currentUser = currentUser;
+  }
+
   @override
   bool isAdmin() {
-    return true;
+    if(currentUser.compareTo("admin") == 0) return true;
+    else return false;
   }
 
   @override
-  Future<void> addRating(LectureInfo lectureInfo, double rating) {
-    // TODO: implement addRating
-  }
-
-  @override
-  Future<void> changeRating() {
-    // TODO: implement changeRating
+  String getCurrentUser() {
+    return currentUser;
   }
 }
