@@ -179,7 +179,7 @@ class ProfilePageView extends StatelessWidget {
                   children: <Widget>[
                     Expanded(
                       child: Text(
-                        "Delete Password",
+                        "Delete Account",
                         style: TextStyle(color: Colors.white),
                       ),
                     )

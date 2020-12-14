@@ -4,7 +4,7 @@ import 'DatabaseController.dart';
 class MyController implements DatabaseController {
   @override
   bool isAdmin() {
-    return true;
+    return false;
   }
 
   @override
