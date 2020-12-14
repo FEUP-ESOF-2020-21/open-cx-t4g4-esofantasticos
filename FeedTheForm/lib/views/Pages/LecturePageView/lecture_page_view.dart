@@ -1,5 +1,6 @@
 import 'package:FeedTheForm/Lecture.dart';
 import 'package:FeedTheForm/controllers/MyController.dart';
+import 'package:FeedTheForm/views/Pages/LoginPageView/login_page_view.dart';
 import 'package:FeedTheForm/widgets/feed_the_form_appbar.dart';
 import 'package:FeedTheForm/widgets/icon_and_info_row.dart';
 import 'package:FeedTheForm/widgets/profile_picture_and_name_row.dart';
@@ -7,9 +8,10 @@ import 'package:FeedTheForm/widgets/rate_button_page_view.dart';
 import 'package:flutter/material.dart';
 
 class LecturePageView extends StatelessWidget {
-  LecturePageView(this.lectureInfo);
+  LecturePageView(this.lectureInfo, this.dbController);
 
   final LectureInfo lectureInfo;
+  final MyController dbController;
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +89,7 @@ class LecturePage extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            ShowRating(lectureInfo, MyController()),
+            ShowRating(lectureInfo, dbController),
           ],
         ),
       ],

@@ -1,3 +1,6 @@
+import 'dart:collection';
+
+import 'package:FeedTheForm/controllers/MyController.dart';
 import 'package:flutter/material.dart';
 import 'package:FeedTheForm/utils/colors.dart';
 import 'package:FeedTheForm/widgets/icon_and_info_row.dart';
@@ -27,6 +30,8 @@ class LecturesListingPageView extends StatelessWidget {
     Date("2020-10-02", "09:30", "10:30"),
     "B223",
     "The 2019 MIT AI Conference, the 3rd edition of this annual conference, focused on the Future of Computing - the rise of Artificial Intelligence and how innovators are leveraging AI to drive new use cases and chieve better outcomes across industries.",
+    1234,
+    {'teste': 3, 'user1': 2, 'user2': 1, 'user3': 5},
   );
 
   static final LectureInfo secondLecture = LectureInfo(
@@ -35,6 +40,8 @@ class LecturesListingPageView extends StatelessWidget {
     Date("2020-10-04", "08:30", "10:00"),
     "B015",
     null,
+    2345,
+    {'teste': 4, 'user1': 5, 'user2': 4, 'user3': 5},
   );
 
   static final LectureInfo thirdLecture = LectureInfo(
@@ -43,6 +50,8 @@ class LecturesListingPageView extends StatelessWidget {
     Date("2020-10-04", "11:00", "12:30"),
     "B104",
     null,
+    3456,
+    {'teste': 1, 'user1': 2, 'user2': 1, 'user3': 3},
   );
 
   final List<Map> lecturesByDay = [
@@ -56,6 +65,10 @@ class LecturesListingPageView extends StatelessWidget {
     },
   ];
 
+  LecturesListingPageView(this.dbController);
+
+  final MyController dbController;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -67,6 +80,7 @@ class LecturesListingPageView extends StatelessWidget {
             context,
             lecturesByDay[index]["yearMonthDay"],
             lecturesByDay[index]["lectures"],
+              dbController,
           );
         },
       ),
@@ -78,15 +92,18 @@ class LecturesInTheSameDayListing extends StatelessWidget {
   BuildContext context;
   DateTime dateTime;
   List<LectureInfo> lecturesInfo;
+  MyController dbController;
 
   LecturesInTheSameDayListing(
     BuildContext context,
     String yearMonthDay,
     List<LectureInfo> lecturesInfo,
+      MyController dbController,
   ) {
     this.context = context;
     this.dateTime = DateTime.parse(yearMonthDay);
     this.lecturesInfo = lecturesInfo;
+    this.dbController = dbController;
   }
 
   @override
@@ -112,7 +129,7 @@ class LecturesInTheSameDayListing extends StatelessWidget {
         ),
         Column(
           children: lecturesInfo
-              .map((lectureInfo) => LectureCard(lectureInfo))
+              .map((lectureInfo) => LectureCard(lectureInfo, dbController))
               .toList(),
         ),
         SizedBox(
@@ -124,9 +141,10 @@ class LecturesInTheSameDayListing extends StatelessWidget {
 }
 
 class LectureCard extends StatelessWidget {
-  LectureCard(this.lectureInfo);
+  LectureCard(this.lectureInfo, this.dbController);
 
   final LectureInfo lectureInfo;
+  final MyController dbController;
 
   @override
   Widget build(BuildContext context) {
@@ -138,7 +156,7 @@ class LectureCard extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => LecturePageView(lectureInfo)),
+                builder: (context) => LecturePageView(lectureInfo, dbController)),
           )
         },
         /* Navigator.pushNamed(context, '/subject') */

@@ -1,7 +1,12 @@
+import 'package:FeedTheForm/controllers/MyController.dart';
 import 'package:FeedTheForm/widgets/icon_and_info_row.dart';
 import 'package:flutter/material.dart';
 
 class PrizePageView extends StatelessWidget {
+  final MyController dbController;
+
+  PrizePageView(this.dbController);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

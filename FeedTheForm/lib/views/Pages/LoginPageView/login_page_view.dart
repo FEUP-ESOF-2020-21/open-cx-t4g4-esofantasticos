@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:FeedTheForm/controllers/MyController.dart';
 import 'package:FeedTheForm/views/app_wrapper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,8 @@ String loginEmail = "teste";
 String loginPass = "teste";
 String adminLoginEmail = "admin";
 String adminLoginPass = "admin";
+
+MyController dbController;
 
 const invalid = TextStyle(
   color: Colors.red,
@@ -147,7 +150,7 @@ class _LoginPageViewState extends State<LoginPageView> {
                                       invalidCredentials = false;
                                       Navigator.push(
                                         context,
-                                        MaterialPageRoute(builder: (context) => AppWrapper()),
+                                        MaterialPageRoute(builder: (context) => AppWrapper(dbController)),
                                       );
                                     } else {
                                       invalidCredentials = true;
@@ -202,10 +205,10 @@ class _LoginPageViewState extends State<LoginPageView> {
 
 bool checkLogin(String email, String pass) {
   if (email.compareTo(loginEmail) == 0 && pass.compareTo(loginPass) == 0) {
-    // REGULAR LOGIN
+    dbController = new MyController(email);
     return true;
   } else if(email.compareTo(adminLoginEmail) == 0 && pass.compareTo(adminLoginPass) == 0) {
-    // ADMIN LOGIN
+    dbController = new MyController(email);
     return true;
   } else {
     // FAILED LOGIN
