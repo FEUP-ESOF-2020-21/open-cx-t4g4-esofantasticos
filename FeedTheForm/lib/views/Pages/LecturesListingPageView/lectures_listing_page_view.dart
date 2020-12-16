@@ -24,6 +24,8 @@ class LecturesListingPageView extends StatelessWidget {
     null,
   );
 
+  //ESTES HARDCODED RATINGS TAMBÉM TEM DE ESTAR NO DBCONTROLLER, HARDCODE LÁ TB, SIGA
+
   static final LectureInfo firstLecture = LectureInfo(
     "Applying AI to Real World Use Cases",
     julieChoi,
@@ -31,7 +33,7 @@ class LecturesListingPageView extends StatelessWidget {
     "B223",
     "The 2019 MIT AI Conference, the 3rd edition of this annual conference, focused on the Future of Computing - the rise of Artificial Intelligence and how innovators are leveraging AI to drive new use cases and chieve better outcomes across industries.",
     1234,
-    {'teste': 3, 'user1': 2, 'user2': 1, 'user3': 5},
+    {'user1': 2, 'user2': 1, 'user3': 5},
   );
 
   static final LectureInfo secondLecture = LectureInfo(
@@ -41,7 +43,7 @@ class LecturesListingPageView extends StatelessWidget {
     "B015",
     null,
     2345,
-    {'teste': 4, 'user1': 5, 'user2': 4, 'user3': 5},
+    {'user1': 5, 'user2': 4, 'user3': 5},
   );
 
   static final LectureInfo thirdLecture = LectureInfo(
@@ -51,7 +53,7 @@ class LecturesListingPageView extends StatelessWidget {
     "B104",
     null,
     3456,
-    {'teste': 1, 'user1': 2, 'user2': 1, 'user3': 3},
+    {'user1': 2, 'user2': 1, 'user3': 3},
   );
 
   final List<Map> lecturesByDay = [

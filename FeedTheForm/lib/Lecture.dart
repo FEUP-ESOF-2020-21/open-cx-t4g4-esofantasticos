@@ -1,4 +1,5 @@
 import 'dart:collection';
+import "dart:math";
 
 class LectureInfo {
   String lectureName;
@@ -38,6 +39,7 @@ class LectureInfo {
         average += value;
       });
       average = average / ratings.length;
+      average = double.parse((average).toStringAsFixed(2));
       return average;
     } else return null;
   }

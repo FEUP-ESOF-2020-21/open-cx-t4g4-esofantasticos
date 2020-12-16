@@ -1,5 +1,4 @@
 import 'package:FeedTheForm/controllers/MyController.dart';
-import 'package:FeedTheForm/views/Pages/LecturePageView/lecture_page_view.dart';
 import 'package:FeedTheForm/views/Pages/LecturesListingPageView/lectures_listing_page_view.dart';
 import 'package:FeedTheForm/views/Pages/LoginPageView/login_page_view.dart';
 import 'package:FeedTheForm/views/Pages/PrizesPageView/prize_page_view.dart';

@@ -1,5 +1,4 @@
 import 'package:FeedTheForm/Lecture.dart';
-import 'package:FeedTheForm/controllers/DatabaseController.dart';
 import 'package:FeedTheForm/controllers/MyController.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -180,12 +179,23 @@ class _RateButtonPageViewState extends State<RateButtonPageView> {
       child: Text('Rate'),
       onPressed: () {
         int lectureCode = int.tryParse(lectureCodeController.text);
-        if(!lectureCode.isNaN) {
+        if(!(lectureCode == null) && !lectureCode.isNaN) {
           if(lectureCode == lectureInfo.lectureCode) {
             lectureInfo.addRating(dbcontroller.getCurrentUser(), this.rating);
+            dbcontroller.addRating(lectureInfo.lectureName, dbcontroller.getCurrentUser(), this.rating);
+            Navigator.of(context).pop();
+          } else {
+            lectureCodeController.text = "Incorrect code";
+            Future.delayed(const Duration(seconds: 1), () {
+              lectureCodeController.text = "";
+            });
           }
+        } else {
+          lectureCodeController.text = "Invalid code";
+          Future.delayed(const Duration(seconds: 1), () {
+            lectureCodeController.text = "";
+          });
         }
-        Navigator.of(context).pop();
       },
     );
   }
