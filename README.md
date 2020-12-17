@@ -270,7 +270,7 @@ Effort: M
 
 To better understand the context of the software system, it is very useful to have a simple UML class diagram with all the key concepts (names, attributes) and relationships involved of the problem domain addressed by your module.
 
-<img src="images/problem_domain.PNG" width="500"/>
+<img src="images/problem_domain.png" width="500"/>
 
 ---
 
