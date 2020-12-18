@@ -304,21 +304,23 @@ Our database server consists in Firebase.
 
 ### Prototype
 
-To help on validating all the architectural, design and technological decisions made, we usually implement a vertical prototype, a thin vertical slice of the system.
+Overall, we implemented most of what we set out to do in the prototype, but we initially intended to have implemented an actual database (ex: Firebase) to allow for data to be stored and fetched from it, but we didn't manage to do so, and while most of our user stories, if not all, relied upon it, we managed to make them work locally, for the time being.
 
-In this subsection please describe in more detail which, and how, user(s) story(ies) were implemented.
+**User Store #1**: "As a user, I want to be able to attribute a rating to a talk and to the speaker who gave it, so that my opinion is taken into account when considering the renewal of this lecture for next year." - Implemented.
 
----
+**User Store #2**: "As a user, I want to be able to check all the information about each lecture, so that I can decide if a lecture interests me and when it'll take place." - Implemented.
+
+**User Store #3**: "As an admin, I want to be able to check the rating of each lecture and each speaker, so that I can decide which lectures will be renewed for next year." - Implemented.
+
+**User Store #4**: "As a user, I want to be notified if I’ve won a prize so that I can go collect it on time." - Not implemented.
+
+**User Store #5**: "As an admin, I want the app to guarantee that each rating was given by a user that was present in the lecture so that the ratings are valid." - Implemented.
+
+**User Store #6**: "As a user, I want to be able to check my account settings so that I can update or delete my information." - Not implemented.
 
 ## Implementation
 
-Regular product increments are a good practice of product management.
-
-While not necessary, sometimes it might be useful to explain a few aspects of the code that have the greatest potential to confuse software engineers about how it works. Since the code should speak by itself, try to keep this section as short and simple as possible.
-
-Use cross-links to the code repository and only embed real fragments of code when strictly needed, since they tend to become outdated very soon.
-
----
+Changelogs for the different product increments can be found [here](https://github.com/FEUP-ESOF-2020-21/open-cx-t4g4-esofantasticos/releases/).
 
 ## Test
 
